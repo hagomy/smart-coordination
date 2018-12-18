@@ -6,7 +6,7 @@ import android.content.Context;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class ClothesDataManager {  //메모 저장
+public class ClothesDataManager {
     private Context mContext;
     private ArrayList<ClothesItem> mItems = new ArrayList<>();
 
@@ -45,7 +45,7 @@ public class ClothesDataManager {  //메모 저장
     }
 
     /**
-     * 캘린더 아이템을 추가하는 메소드
+     * 아이템을 추가하는 메소드
      * @param item
      */
     public void addItem(ClothesItem item) {

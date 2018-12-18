@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ClothesListAdapterTitle extends RecyclerView.Adapter<ClothesListAdapterTitle.CalendarListViewHolder> {
+public class ClothesListAdapterTitle extends RecyclerView.Adapter<ClothesListAdapterTitle.ClothesListViewHolder> {
     // 0이면 홈화면, 아니면 리스트 화면
     private int type = 0;
     ArrayList<ClothesItem> items = new ArrayList<>();
@@ -19,14 +19,14 @@ public class ClothesListAdapterTitle extends RecyclerView.Adapter<ClothesListAda
     }
 
     @Override
-    public CalendarListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ClothesListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_cloth, parent, false);
-        return new CalendarListViewHolder(itemView);
+        return new ClothesListViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(CalendarListViewHolder holder, int position) {
+    public void onBindViewHolder(ClothesListViewHolder holder, int position) {
         holder.onBind(items.get(position));
     }
 
@@ -39,8 +39,8 @@ public class ClothesListAdapterTitle extends RecyclerView.Adapter<ClothesListAda
         items.add(item);
     }
 
-    class CalendarListViewHolder extends RecyclerView.ViewHolder {
-        CalendarListViewHolder(View view) {
+    class ClothesListViewHolder extends RecyclerView.ViewHolder {
+        ClothesListViewHolder(View view) {
             super(view);
         }
 

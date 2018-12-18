@@ -25,7 +25,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        // 날짜 뷰 홀더에 바인딩하는 부분
+        // 뷰 홀더에 바인딩하는 부분
         ((ClothesViewHolder)holder).onBind(clickListener);
     }
 
@@ -42,7 +42,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
         void onBind(final ClothesClickListener listener) {
-            // 날짜, 아이템들, 데이터 메니저 초기화
+            // 아이템들, 데이터 메니저 초기화
             manager = new ClothesDataManager(itemView.getContext());
             items = manager.getClothesItems();
             TextView tvCloth = itemView.findViewById(R.id.tv_cloth);
@@ -61,7 +61,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             // 새로고침
             adapter.notifyDataSetChanged();
 
-            // 아이템을 눌렀을 때 클릭리스너. CalendarActivity에서 만든 클릭리스너를 CalendarAdapter에 넘겨서 여기서 사용한다.
+            // 아이템을 눌렀을 때 클릭리스너. ClothesFragment에서 만든 클릭리스너를 ClothesAdapter에 넘겨서 여기서 사용한다.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -1,15 +1,20 @@
 package com.pickth.dddd.smartcoordination;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ClothAddActivity extends AppCompatActivity {
     EditText etTitle;
+    ImageView ivImage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -17,6 +22,14 @@ public class ClothAddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cloth_add);
 
         etTitle = findViewById(R.id.et_add_title);
+        Intent intent = getIntent();
+        int[] voteResult = intent.getIntArrayExtra("Image");
+        intent.getParcelableExtra("image");
+
+        byte[] arr = getIntent().getByteArrayExtra("image");
+        Bitmap image = BitmapFactory.decodeByteArray(arr, 0, arr.length);
+        ivImage = (ImageView)findViewById(R.id.iv_add_cloth);
+        ivImage.setImageBitmap(image);
     }
 
     @Override
