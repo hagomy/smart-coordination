@@ -103,11 +103,59 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#456789"
                     android:id="@+id/history"
-                    android:orientation="vertical">
+                    android:gravity="center">
+
+                    <!-- Activity Layout XML -->
+                    <!-- @author croute -->
+                    <!-- @since 2011.03.08 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_marginLeft="30dp"
+                            android:id="@+id/gv_calendar_activity_b_last"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ab"  />
+                        <TextView
+                            android:text="2011년 몇월"
+                            android:textSize="30dp"
+                            android:id="@+id/gv_calendar_activity_tv_title"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:layout_weight="1"/>
+                        <ImageView
+                            android:layout_marginRight="30dp"
+                            android:id="@+id/gv_calendar_activity_b_next"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/af"  />
+                    </LinearLayout>
+
+                    <GridView
+                        android:id="@+id/gv_calendar_activity_gv_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:numColumns="7"
+                        android:stretchMode="columnWidth"
+                        android:layout_weight="8"/>
                 </LinearLayout>
 
                 <LinearLayout
